@@ -6,6 +6,12 @@ _The only change in this version is that the require_once() calls to font/unifon
 are commented and resolved through the composer autoloader. The demo ex.php was changed
 accordingly, too._
 
+**This is a fork of setasign/tFPDF, where a new method SetCellMargin() was added**
+
+$cMargin is a private property, but I needed to change it to be able to match the result of GetStringWidth() with MultiCell() or Cell(). This is because GetStringWidth() does not consider a cell margin, while Cell() or MultiCell() uses a non-zero value of cell margin ($cMargin). As I didn't necessarily want any cell Margin, I added this method to reset $cMargin to zero. Without resetting $cMargin to zero, if I calculated the size of a string with GetStringWidth() and used Cell() or MultiCell() with that width and with the same text, I sometimes end up having automatic carriage return on my PDF, due to cell margins.
+
+**As I have proposed the changes to the maintainer of tFPDF, if such changes are added to the official version, I will very likely delete my own fork**
+
 tFPDF accepts UTF-8 encoded text. It embeds font subsets allowing small PDF files.
 
 It requires a folder 'unifont' as a subfolder of the 'font' folder.

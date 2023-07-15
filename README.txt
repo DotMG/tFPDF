@@ -13,3 +13,4 @@ All tFPDF requires is a .ttf TrueType font file. The file should be placed in th
 Pass a fourth parameter as true when calling AddFont(), and use utf-8 encoded text 
 when using Write() etc.
 
+See README.md for why I needed this fork of setasign/tFPDF

@@ -184,6 +184,12 @@ function SetMargins($left, $top, $right=null)
 	$this->rMargin = $right;
 }
 
+function SetCellMargin($margin)
+{
+	// Set cell margin
+	$this->cMargin = $margin;
+}
+
 function SetLeftMargin($margin)
 {
 	// Set left margin
